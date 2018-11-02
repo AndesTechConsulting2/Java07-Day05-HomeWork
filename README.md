@@ -6,6 +6,7 @@
 Book нужно переопределить метод toString. onLoan - поле типа boolean, показывает выдана ли книга.
 
 Создать класс исключений BookLoanException. 
+
 Создать класс исключений BookNotFoundException. 
 
 Создать класс Library. Library должен содержать массив типа Book. Размер массива фиксирован. 
