@@ -62,8 +62,9 @@ public class App
         }
     }
 
-    private static void tryAddBook(Library library, Book book, boolean result){
-        assert library.addBook(book) == result;
+    private static void tryAddBook(Library library, Book book, boolean expResult){
+        boolean res = library.addBook(book);
+        assert res == expResult;
     }
 
 
@@ -100,7 +101,7 @@ public class App
         tryLoanBook(library,b1); //OK
         tryLoanBook(library,b1); //Exception IsLoan
         tryLoanBook(library1,b1); //Exception NoFound
-        tryLoanBook(library,b5); //Exception NoFound
+        tryLoanBook(library,b5); //Exception NoFound*/
 
         tryRemoveBook(library,b2); //OK
         tryRemoveBook(library,b3.getId()); //OK
