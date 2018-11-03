@@ -2,7 +2,7 @@ package org.andestech.learning.rfb18.g2;
 
 /**
  * Library class test app
- * test 2
+ * 
  */
 public class App 
 {
