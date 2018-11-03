@@ -10,7 +10,7 @@ public class App
     {
         /**
          * TODO: Test Library class here!
-         *
+         * sol2
          * Домашняя работа на выходные.
          *
          *
