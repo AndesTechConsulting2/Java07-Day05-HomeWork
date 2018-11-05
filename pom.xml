@@ -4,11 +4,11 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>org.andestech.learning.rfb18.g2</groupId>
-  <artifactId>Java07Day05HomeWork</artifactId>
+  <groupId>ru.home.training</groupId>
+  <artifactId>homework_ruatyaj01</artifactId>
   <version>1.0-SNAPSHOT</version>
 
-  <name>Java07Day05HomeWork</name>
+  <name>homework_ruatyaj01</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
