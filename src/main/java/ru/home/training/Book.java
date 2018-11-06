@@ -3,11 +3,11 @@ package ru.home.training;
 public class Book {
 
 
-    public int id, ISBN, year;
-    public String author, title;
+    public int id, year;
+    public String author, title,ISBN;
     public boolean onloan;
 
-    public Book(int id, int ISBN, int year, String author, String title) {
+    public Book(int id, String ISBN, int year, String author, String title,boolean onloan) {
         this.id = id;
         this.ISBN = ISBN;
         this.year = year;
@@ -41,11 +41,11 @@ public class Book {
         this.title = title;
     }
 
-    public int getISBN() {
+    public String getISBN() {
         return ISBN;
     }
 
-    public void setISBN(int ISBN) {
+    public void setISBN(String ISBN) {
         this.ISBN = ISBN;
     }
 
@@ -60,7 +60,7 @@ public class Book {
 
     @Override
     public String toString() {
-        return getClass().getName() + "--" +
+        return getClass().getName() + "__" +
                 "id: " + id +
                 ", ISBN: " + ISBN +
                 ", Автор: " + author +
