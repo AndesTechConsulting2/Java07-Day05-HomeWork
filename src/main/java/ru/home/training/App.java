@@ -19,7 +19,7 @@ public class App {
         //library.removeBook(book1);
         //library.allBooks();
         library.loan(book4);
-        library.loan(book2);
+        //library.loan(book2);
 
     }
 }
