@@ -1,43 +1,54 @@
-package org.andestech.learning.rfb18.g2;
+package ru.raiffeisen.mikhaylova;
 
-/**
- * Library class test app
- * 
- */
-public class App 
-{
-    public static void main( String[] args )
-    {
-        /**
-         * TODO: Test Library class here!
-         *
-         * Домашняя работа на выходные.
-         *
-         *
-         * Создать класс Book. Book должен содержать поля id, author, title, year, ISBN, onLoan. В классе
-         * Book нужно переопределить метод toString. onLoan - поле типа boolean, показывает выдана
-         * ли книга.
-         *
-         * Создать класс исключений BookLoanException.
-         * Создать класс исключений BookNotFoundException.
-         *
-         * Создать класс Library. Library должен содержать массив типа Book. Размер массива
-         * фиксирован.
-         *
-         * В классе Library создать метод loan, который позволяет выдавать книгу и генерирующий
-         * исключение типа BookLoanException,  если книга уже на руках.
-         * Также метод loan должен генерировать исключение BookNotFoundException, если книга отстутствует в библиотеке.
-         *
-         * В классе Library создать метод add, который позволяет
-         * добавлять новую книгу в библиотеку.
-         *
-         * В классе Library создать метод remove, который позволяет
-         * удалять книгу из библиотеки.
-         *
-         * В классе App протестировать работу библиотеки.
-         */
+public class App {
 
+    private static void tryLoan(Library library, Book book) {
+        System.out.println("----------\nВзять книгу");
+        try {
+            library.loan(book);
+            System.out.println("книга выдана");
+        } catch (BookLoanException | BookNotFoundException ex) {
+            System.out.println("Message: " + ex.getMessage());
+        }
+    }
 
+    private static void tryRemove(Library library, Book book) {
+        System.out.println("----------\nУдалить книгу");
+        try {
+            library.remove(book);
+            System.out.println("Кгига удалена");
+        } catch (BookLoanException | BookNotFoundException ex) {
+            System.out.println("Message: " + ex.getMessage());
+        }
+    }
 
+    private static void tryAdd(Library library, Book book, boolean expResult) {
+        boolean res = library.add(book);
+        assert res == expResult;
+    }
+
+    public static void main(String[] args) {
+        // Books test data
+        Book b1 = new Book(1000, "StoryMan", "Story", "9883161484100");
+        Book b2 = new Book(1100, "StoryMan", "Story", "9883161484101");
+        Book b3 = new Book(1200, "StoryMan", "Story", "9883161484102");
+        Book b4 = new Book(1300, "StoryMan", "Story", "9883161484103");
+        Book b5 = new Book(1400, "StoryMan", "Story", "9883161484104");
+
+        Book books[] = new Book[Library.LIBRARY_SIZE];
+        books[0] = b1;
+        books[1] = b2;
+
+        //Library and filling examples
+        Library library = new Library(books);
+        library.add(new Book(1500, "StoryMan", "Story", "9883161484105"));
+        library.add(1600, "StoryMan", "Story", "9883161484106");
+
+        //Tests
+        tryAdd(library, b1, true);
+        tryAdd(library, b1, false);
+        tryLoan(library, b1);
+        tryRemove(library, b1);
+        tryLoan(library, b5);
     }
 }
